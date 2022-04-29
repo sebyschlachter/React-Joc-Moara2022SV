@@ -1,0 +1,73 @@
+body {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  background-color: aliceblue;
+}
+h1 {
+  font-size: 40px;
+  font-style: normal;
+  font-family: Tahoma, Verdana, sans-serif;
+}
+h2 {
+  font-size: 25px;
+  font-style: italic;
+  font-weight: bold;
+  color: #ffd700;
+}
+h3 {
+  padding: 0;
+  margin: 0 auto;
+}
+.info {
+  border: 1px solid black;
+  width: 30%;
+  margin: 0 auto;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  border-radius: 25%;
+}
+.info a {
+  color: blue;
+  text-decoration: none;
+  font-size: 20px;
+  font-style: italic;
+}
+.info a:hover {
+  color: rgb(252, 252, 252);
+  background-color: black;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: bold;
+}
+.info span {
+  color: rgb(9, 97, 230);
+  font-weight: bold;
+  font-style: oblique;
+}
+#history {
+  border: 1px solid black;
+  width: 27%;
+  margin: 0 auto;
+  padding-top: 10px;
+  border-radius: 25%;
+  margin-top: 10px;
+}
+#history p {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Lucida Console";
+}
+#history span {
+  color: rgb(9, 97, 230);
+  font-weight: bold;
+}
+#history ul {
+  width: 50%;
+  margin: 0 auto;
+  list-style-type: square;
+}
+#history li {
+  text-align: left;
+  font-family: "Georgia";
+}

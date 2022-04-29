@@ -1,0 +1,26 @@
+{
+  "name": "react-joc-moara2022sv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebyschlachter/React-Joc-Moara2022SV.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebyschlachter/React-Joc-Moara2022SV/issues"
+  },
+  "homepage": "https://github.com/sebyschlachter/React-Joc-Moara2022SV#readme",
+  "dependencies": {
+    "express": "^4.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
