@@ -144,3 +144,18 @@
 footer {
   text-align: center;
 }
+.chat-box {
+  border: 1px solid black;
+  width: 500px;
+  height: 500px;
+}
+.notification {
+  border: 2px solid red;
+  width: 200px;
+  height: 20px;
+  list-style-type: none;
+  text-align: center;
+  font-weight: bold;
+  font-style: normal;
+  background-color: rgb(211, 223, 223);
+}

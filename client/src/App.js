@@ -1,35 +1,38 @@
-//import Example5 from "./components/examples/example5";
-import Exercitiu1 from "./components/tema3/exercitiu1";
-import Exercitiu2 from "./components/tema3/exercitiu2";
-import Exercitiu3 from "./components/tema3/exercitiu3";
-import Exercitiu4 from "./components/tema3/exercitiu4";
+import { io } from "socket.io-client"
+import { useEffect, useState } from "react";
+import Chat from "./components/tema4/chat";
+//import Rooms from "./components/menu/rooms";
 function App() {
-  return (
-    <>
-      <div className="App">
-        {/* <Example1 />
-      <br/>
-      <Example2 />
-      <br/>
-      <Example3 />
-      <br/>
-      <Example4 /> 
-      <br/>
-      <Example5 /> */}
-        <br />
-        <Exercitiu1 />
-        <br />
-        <Exercitiu2 />
-        <br />
-        <Exercitiu3 />
-        <br />
-        <Exercitiu4 />
-      </div>
-      <footer>
-        Tema 3
-      </footer>
+  const [connectedSocket, setConnectedSocket] = useState();
+  // const [data, setData] = useState();
 
-    </>
+  useEffect(() => {
+    const socket = io();
+    socket.on("connected", () => {
+      setConnectedSocket(socket);
+    });
+    /* socket.on("data", (receivedData)=>{
+       setData(receivedData);
+     })*/
+  }, []);
+
+  /*if(!(data && connectedSocket)){
+    return(<p>waiting for conection...</p>);
+  }*/
+  if (!connectedSocket) {
+    return (<p>waiting for conection...</p>);
+  }
+
+
+  return (
+    <div style={{ padding: 10 }}>
+      <h1>Tema 4</h1>
+      {/*} {data.room === 'menu' ? 
+      (<Rooms socket = {connectedSocket} rooms={data.availableRooms}/>) : 
+      (<Chat socket = {connectedSocket} roomName = {data.room}/>)}*/}
+      <Chat socket={connectedSocket} />
+    </div>
+
   );
 }
 
