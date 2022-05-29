@@ -10,7 +10,7 @@ const NotificationRow = ({ notification }) => {
 
     if (loaded) {
         return (
-            <li className="notification" >{notification}</li>
+            <li className="notification2" >{notification}</li>
         )
     }
 

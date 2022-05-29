@@ -1,38 +1,34 @@
 import { io } from "socket.io-client"
 import { useEffect, useState } from "react";
-import Chat from "./components/tema4/chat";
-//import Rooms from "./components/menu/rooms";
+import Menu from "./components/menu/menu";
+import Room from "./components/room/room";
 function App() {
   const [connectedSocket, setConnectedSocket] = useState();
-  // const [data, setData] = useState();
+   const [data, setData] = useState();
 
   useEffect(() => {
     const socket = io();
     socket.on("connected", () => {
       setConnectedSocket(socket);
     });
-    /* socket.on("data", (receivedData)=>{
+     socket.on("data", (receivedData)=>{
        setData(receivedData);
-     })*/
+     })
   }, []);
+  
+  const content  = () =>{
+    if(!(data && connectedSocket)) return null;
 
-  /*if(!(data && connectedSocket)){
-    return(<p>waiting for conection...</p>);
-  }*/
-  if (!connectedSocket) {
-    return (<p>waiting for conection...</p>);
+    const {room} = data;
+    if(room === "menu") {
+      return < Menu socket={connectedSocket} rooms={data.availableRooms} />
+    }
+    return <Room socket={connectedSocket} {...room}/>
+    
   }
-
-
+  
   return (
-    <div style={{ padding: 10 }}>
-      <h1>Tema 4</h1>
-      {/*} {data.room === 'menu' ? 
-      (<Rooms socket = {connectedSocket} rooms={data.availableRooms}/>) : 
-      (<Chat socket = {connectedSocket} roomName = {data.room}/>)}*/}
-      <Chat socket={connectedSocket} />
-    </div>
-
+    <div className="container">{content()}</div>
   );
 }
 
