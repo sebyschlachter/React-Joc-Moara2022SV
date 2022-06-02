@@ -26,17 +26,17 @@ function App() {
                 </div>
               )
           })}
-      </div>
+        </div>
       <ul>
           {answers.map((answer, index) => {
               return (
-              <>
+              <div key={index}>
                 <div className='d-flex'>
-                  <div style={{width:25,height:25,backgroundColor:'red',opacity:`${answer['percent']/100}`}}></div>
-                  <div key={index}  >{answer['answer']} - {answer['percent']} %</div>
+                  <div  style={{width:25,height:25,backgroundColor:'red',opacity:`${answer['percent']/100}`}}></div>
+                  <div   >{answer['answer']} - {answer['percent']} %</div>
                 </div>
                 <br/>
-              </>
+              </div>
               )
           })}
         </ul>
