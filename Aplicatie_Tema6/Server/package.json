@@ -1,9 +1,8 @@
 {
-  "name": "react-joc-moara2022sv",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
   "scripts": {
     "devStart": "nodemon server.js"
   },
@@ -19,10 +18,10 @@
   },
   "homepage": "https://github.com/sebyschlachter/React-Joc-Moara2022SV#readme",
   "dependencies": {
-    "express": "^4.18.0",
+    "express": "^4.18.1",
     "socket.io": "^4.5.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.16"
   }
 }

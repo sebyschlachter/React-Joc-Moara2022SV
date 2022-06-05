@@ -75,5 +75,29 @@ io.on("connection", (socket) => {
     emitRoomData(roomName);
     emitMenuData();
   })
+
+  socket.on("game-action", ({ action, circleId }) => {
+    console.log({ action, circleId });
+    const game = games[socket.data.room];
+    game.action(socket.id, action, circleId);
+    // Emit to everyone in 'roomName' the room data
+    let data;
+    if (game.isOver) {
+      // leftRooms.push(socket.data.room);
+      data = {
+        name: socket.data.room,
+        mustLeave: true,
+        message: "The game ended.",
+        winner: game.winner,
+      };
+    } else {
+      data = {
+        name: socket.data.room,
+        ready: true,
+        game: game.data(),
+      };
+    }
+    io.to(socket.data.room).emit("game-data", data);
+  });
 });
 
